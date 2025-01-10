@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-menu-launcher {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #161618;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #121213;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar-right {
+    width: 70px;
+    height: 100vh;
+    background-color: #121213;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 242px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.buttonClick {
+    cursor: pointer;
+}
+
+.sidebar-right .texts svg {
+    vertical-align: middle;
+    margin-left: 25px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -50px;
+}
+
+.bardivision5 {
+    border: 0.1px solid #2b2c2e;
+    width: 55px;
+    height: 0.1px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.sidebar-right img {
+    width: auto;
+    height: 40px;
+}
+
+.texts {
+    width: 100%;
+}
+
+.launchButton {
+    display: block;
+    background-color: #1990ff;
+    border: 0.1px solid #e7e7e7;
+    width: 260px;
+    height: 45px;
+    font-family: "Ubuntu";
+    font-weight: 700;
+    color: #e7e7e7;
+    border-radius: 5px;
+    transition: all 0.155s;
+    position: fixed;
+    margin-right: 113px;
+}
+
+.content-right p {
+    margin-left: 120px;
+    margin-top: 550px;
+}
+
+.config {
+    background-color: #1a1a1b;
+    border: 0.1px solid #353a3f;
+    padding: 5px;
+    margin-top: -110px;
+    margin-left: 115px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.iconconfig {
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.text-center {
+    text-align: center;
+    margin-left: 110px;
+    margin-top: 30px;
+    color: #52a3ff;
+    font-size: 25px;
+    font-family: "Ubuntu";
+}
+
+.launchButton:hover {
+    background-color: #16bdff;
+    cursor: pointer;
+}
+
+.buttons-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -310px;
+    margin-top: 350px;
+}
+
+.texts a {
+    display: block;
+    font-family: "Ubuntu";
+    color: rgb(95, 92, 92);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 13px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    margin-left: 80px;
+}
+
+.texts a:hover {
+    color: #52a3ff;
+}
+
+.texts {
+    width: 100%;
+}
+
+.texts1 a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 13px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    margin-left: -10px;
+    margin-top: 80px;
+}
+
+.bardivision {
+    border: 0.1px solid #2b2c2e;
+    width: 220px;
+    height: 0.1px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.bardivision1{
+    border: 0.1px solid #2b2c2e;
+    width: 220px;
+    height: 0.1px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.texts svg {
+    vertical-align: middle;
+    margin-left: 50px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -50px;
+}
+
+.main-menu-launcher .content-right .panel-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #121213;
+    border: 0.01px solid #353a3f;
+    border-radius: 5px;
+    width: 600px;
+    height: 200px;
+    margin-top: 30px;
+    overflow: hidden;
+    margin-left: 85px;
+}
+
+.main-menu-launcher .content-right .panel-center img {
+    width: auto;
+    height: 340px;
+}
+
+.image-panel {
+    filter: blur(2px);
+}
+
+
+/*Menu de Conta*/
+
+.main-menu-launcher .content-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-menu-launcher .content-menu .content-login {
+    display: flex;
+    background-color: #131313;
+    padding: 15px;
+    margin-left: 150px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 340px;
+    border-radius: 5px;
+}
+
+.main-menu-launcher .content-menu .content-login input {
+    background-color: #232425;
+    border-radius: 2px;
+    border: 0.1px solid #353a3f;
+    padding: 10px;  
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%; 
+    color: #fff;
+}
+
+.main-menu-launcher .content-menu .content-login button {
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-family: "Ubuntu";
+}
+
+.bardivision3 {
+    border: 0.1px solid #3b3b3b;
+    width: 100%;
+    height: 0.1px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border-radius: 25px;
+}
+
+.text-top {
+    color: #bbdbff;
+    font-family: "Ubuntu";
+    background-color: #1a1a1b;
+    padding: 10px;
+    width: 100%;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 21px
+}
+
+.erros-text {
+    color: rgb(238, 238, 238);
+    margin-top: 15px;
+    background-color: #1a1a1b;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Ubuntu";
+}
