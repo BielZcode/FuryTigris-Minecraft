@@ -1,0 +1,41 @@
+.main-menu-launcher .main-configs {
+    margin: 0;
+}
+
+.main-menu-launcher .main-configs .menu-horizontal {
+    width: 90vh;
+    margin-top: 25px;
+    margin-left: 110px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.main-menu-launcher .main-configs .menu-horizontal a{
+    margin-left: 10px;
+    color: #fff;
+    font-family: "Ubuntu";
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+
+.main-menu-launcher .main-configs .menu-horizontal a::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Começa do centro */
+    bottom: -5px; /* Espaço abaixo do texto */
+    width: 0; /* Inicialmente a barra tem largura zero */
+    height: 2px; /* Altura da barra */
+    background-color: #4485ca; /* Cor da barra */
+    transition: width 0.3s ease, left 0.3s ease; /* Transição suave para a largura e posição */
+}
+
+.main-menu-launcher .main-configs .menu-horizontal a:hover::after {
+    width: 100%; /* Aumenta para 100% do texto */
+    left: 0; /* Move para o início do texto */
+}

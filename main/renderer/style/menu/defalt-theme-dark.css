@@ -1,3 +1,8 @@
+/**
+*By GameStatic:BielZcode
+*Data 11.1.2025
+**/
+
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +38,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    margin-left: 242px;
+    margin-left: 388px;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -66,25 +71,59 @@
 .sidebar-right img {
     width: auto;
     height: 40px;
+    border: 0.1px solid #272b2e;
 }
 
 .texts {
     width: 100%;
 }
 
+.buttons-menu .panelversion {
+    background-color: #101011;
+    border: 0.1px solid #52a3ff;
+    position: fixed;
+    z-index: 1;
+    margin-bottom: 230px;
+    margin-left: 10px;
+    width: 260px;
+    border-radius: 5px;
+    padding: 8px;
+    height: 55px;
+    overflow: auto;
+}
+
+.buttons-menu .panelversion ul {
+    list-style-type: none;
+    color: #fff;
+}
+
+.buttons-menu .panelversion ul li {
+    background-color: #161618;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+}
+
+.buttons-menu .panelversion ul li:hover {
+    background-color: #557492;
+    color: #c5d3ff;
+}
+
 .launchButton {
     display: block;
-    background-color: #1990ff;
+    background-color: #0e375e;
     border: 0.1px solid #e7e7e7;
     width: 260px;
     height: 45px;
     font-family: "Ubuntu";
     font-weight: 700;
+    margin-left: 10px;
     color: #e7e7e7;
     border-radius: 5px;
     transition: all 0.155s;
     position: fixed;
-    margin-right: 113px;
 }
 
 .content-right p {
@@ -97,9 +136,11 @@
     border: 0.1px solid #353a3f;
     padding: 5px;
     margin-top: -110px;
-    margin-left: 115px;
+    margin-left: 10px;
     border-radius: 5px;
+    width: 260px;
     cursor: pointer;
+    position: fixed;
 }
 
 .iconconfig {
@@ -289,4 +330,79 @@
     padding: 5px;
     border-radius: 5px;
     font-family: "Ubuntu";
+}
+
+.alert-report {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #101011;
+    border: 0.1px solid #52a3ff;
+    color: #fff;
+    border-radius: 15px;
+    width: 510px;
+    height: 250px;
+    margin-right: 120px;
+    margin-bottom: 150px;
+    flex-direction: column;
+    font-family: "Ubuntu";
+    overflow: auto;
+    display: none;
+    z-index: 1;
+}
+
+.sidebar-right p {
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.text-conta {
+    border-bottom: 0.1px solid #f38a00;
+    margin-bottom: 5px;
+}
+
+.alert-report h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.alert-report p {
+    max-width: 100%;
+    text-align: center;
+}
+
+.alert-report pre {
+    text-align: center;
+    max-width: 100%;
+}
+
+.bar {
+    width: 90%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    border-bottom: 0.1px solid #52a3ff;
+}
+
+/* Barra de progresso de fundo */
+.progress-bar {
+    background-color: #4485ca; /* Cor de fundo */
+    width: 100%; /* Ocupa 100% do container */
+    height: 30px;
+    margin-top: 140px; /* Espaço superior */
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra de progresso */
+.progressbar {
+    background-color: #306be9; /* Cor da barra de progresso */
+    width: 0%; /* Inicialmente a barra de progresso está vazia */
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.1s ease; /* Suaviza o movimento */
 }

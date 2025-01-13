@@ -1,45 +1,28 @@
-'use strict';
+const fs = require('fs');
+const path = require('path');
+const https = require('https'); // ou 'http' se o arquivo for HTTP
 
-const os = require('os');
-const constants = require('../../constants');
-const UrlDownloader = require('../../classes/UrlDownloader');
-const sendMessageToRenderer = require('../util/sendMessageToRenderer');
-const trans = require('../util/trans');
+// Função para fazer o download e salvar o arquivo no diretório específico
+function downloadAndSaveFile(url, fileName) {
+    // Define o caminho onde o arquivo será salvo
+    const savePath = path.join(process.env.APPDATA, '.minecraft', 'versions', 'furytigris', fileName);
 
-function getPlatformName() {
-    let platform = os.platform();
+    // Cria o stream de gravação para salvar o arquivo
+    const file = fs.createWriteStream(savePath);
 
-    switch (platform) {
-        case 'linux':
-            break;
-        case 'win32':
-            platform = 'windows';
-
-            break;
-        case 'darwin':
-            platform = 'osx';
-
-            break;
-    }
-
-    return platform;
+    // Faz a requisição HTTP para o URL
+    https.get(url, (response) => {
+        response.pipe(file);
+        
+        file.on('finish', () => {
+            file.close();
+            console.log('Download concluído e salvo em:', savePath);
+        });
+    }).on('error', (err) => {
+        fs.unlink(savePath);  // Remove o arquivo caso ocorra erro
+        console.error('Erro no download:', err.message);
+    });
 }
 
-module.exports = function download(version, progressDuration, progressMessage, initialProgress) {
-    return new Promise((resolve, reject) => {
-        let downloader = new UrlDownloader();
-
-        downloader.download(`https://launcher.mojang.com/v1/objects/0983f08be6a4e624f5d85689d1aca869ed99c738/client.jar`, constants.path.tmp);
-        downloader.on('progress', data => {
-            let downloaded = (data.downloaded / 1024).toFixed(2);
-            let size = (data.size / 1024).toFixed(2);
-
-            sendMessageToRenderer('launch:progress', {
-                step: `${trans(progressMessage)} (${downloaded} / ${size})`,
-                progress: Math.floor(initialProgress + progressDuration * data.progress / 100),
-            });
-        });
-        downloader.on('end', path => resolve(path));
-        downloader.on('error', () => reject);
-    });
-};
+// Exporte a função para ser usada em outros arquivos
+module.exports = { downloadAndSaveFile };

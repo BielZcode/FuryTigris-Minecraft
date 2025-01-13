@@ -9,7 +9,7 @@ ipcMain.handle('load-account', (event) => {
 });
 
 function loadAccount() {
-  const filePath = path.join(os.homedir(), 'AppData', 'Roaming', 'FuryTigris Client', 'accounts.dat');
+  const filePath = path.join(os.homedir(), 'AppData', 'Roaming', 'FuryTigris Client', 'accounts.json');
 
   if (!fs.existsSync(filePath)) {
     return { success: false, message: 'Arquivo de contas não encontrado!' };
