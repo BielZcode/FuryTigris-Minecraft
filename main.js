@@ -102,7 +102,7 @@ ipcMain.handle('create-account', (event, username) => {
 });
 
 app.on('ready', async () => {
-  const currentVersion = app.getVersion();
+  const currentVersion = "1.0.1";
   const versionEndpoint = 'https://exemplo.com/api/versao'; // URL REAL do seu endpoint
   const downloadURL = 'URL_DE_DOWNLOAD_DA_NOVA_VERSAO'; // URL REAL do arquivo de atualização
   try {
