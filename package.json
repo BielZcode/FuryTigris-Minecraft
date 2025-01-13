@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron-forge start",
     "make": "electron-forge make",
+    "debug": "DEBUG=electron* yarn start",
     "package": "electron-forge package",
     "backend": "node server.js"
   },
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Organizacao-FuryTigris/FuryTigris-Source#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/maker-deb": "^7.6.0",
     "@electron-forge/maker-rpm": "^7.6.0",
