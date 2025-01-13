@@ -8,7 +8,7 @@ const { loggermanager } = require('./main/utils/loggermanager/loggermanager');
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    
+
     width: 1100,
     height: 700,
     webPreferences: {
@@ -101,7 +101,20 @@ ipcMain.handle('create-account', (event, username) => {
   }
 });
 
-app.on('ready', createWindow);
+app.on('ready', async () => {
+  const currentVersion = app.getVersion();
+  const versionEndpoint = 'https://exemplo.com/api/versao'; // URL REAL do seu endpoint
+  const downloadURL = 'URL_DE_DOWNLOAD_DA_NOVA_VERSAO'; // URL REAL do arquivo de atualização
+  try {
+    createWindow();
+    const updateStarted = await checkForUpdates(currentVersion, versionEndpoint, downloadURL, app);
+    if (updateStarted) {
+      console.log('Update started successfully!');
+    }
+  } catch (error) {
+    console.error("Houve um erro na verificação de updates", error)
+  }
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
