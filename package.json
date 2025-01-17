@@ -1,60 +1,66 @@
 {
-  "name": "furytigris",
-  "version": "1.0.0",
-  "description": "FuryTigris Launcher",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "make": "electron-forge make",
-    "package": "electron-forge package",
-    "backend": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Organizacao-FuryTigris/FuryTigris-Source"
-  },
-  "author": "BielZcode",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Organizacao-FuryTigris/FuryTigris-Source/issues"
-  },
-  "homepage": "https://github.com/Organizacao-FuryTigris/FuryTigris-Source#readme",
-  "devDependencies": {
-    "@electron-forge/cli": "^7.6.0",
-    "@electron-forge/maker-deb": "^7.6.0",
-    "@electron-forge/maker-rpm": "^7.6.0",
-    "@electron-forge/maker-squirrel": "^7.6.0",
-    "@electron-forge/maker-zip": "^7.6.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
-    "@electron-forge/plugin-fuses": "^7.6.0",
-    "@electron/fuses": "^1.8.0",
-    "electron": "^33.3.1",
-    "electron-builder": "^25.1.8"
-  },
-  "dependencies": {
-    "chalk": "^5.4.1",
-    "cors": "^2.8.5",
-    "electron-squirrel-startup": "^1.0.1",
-    "express": "^4.21.2"
-  },
-  "electronForger": {
-    "packagerConfig": {
-      "icon": "./src/assets/icon.ico"
+    "name": "furytigris",
+    "version": "1.0.0",
+    "description": "FuryTigris Launcher",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "make": "electron-forge make",
+        "debug": "DEBUG=electron* yarn start",
+        "test": "cucumber-js tests/features/*.feature --require tests/steps/**/*.js",
+        "package": "electron-forge package",
+        "backend": "node server.js"
     },
-    "makers": [
-      {
-        "name": "@electron-forge/maker-squirrel",
-        "config": {
-          "name": "furytigris_launcher"
-        }
-      },
-      {
-        "name": "@electron-forge/maker-zip",
-        "platforms": [
-          "win32",
-          "win64"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Organizacao-FuryTigris/FuryTigris-Source"
+    },
+    "author": "BielZcode",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Organizacao-FuryTigris/FuryTigris-Source/issues"
+    },
+    "homepage": "https://github.com/Organizacao-FuryTigris/FuryTigris-Source#readme",
+    "devDependencies": {
+        "@cucumber/cucumber": "^11.2.0",
+        "@electron-forge/cli": "^7.6.0",
+        "@electron-forge/maker-deb": "^7.6.0",
+        "@electron-forge/maker-rpm": "^7.6.0",
+        "@electron-forge/maker-squirrel": "^7.6.0",
+        "@electron-forge/maker-zip": "^7.6.0",
+        "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
+        "@electron-forge/plugin-fuses": "^7.6.0",
+        "@electron/fuses": "^1.8.0",
+        "chai": "^5.1.2",
+        "electron": "^33.3.1",
+        "electron-builder": "^25.1.8",
+        "sinon": "^19.0.2"
+    },
+    "dependencies": {
+        "chalk": "^5.4.1",
+        "cors": "^2.8.5",
+        "electron-squirrel-startup": "^1.0.1",
+        "express": "^4.21.2",
+        "rewire": "^7.0.0"
+    },
+    "electronForger": {
+        "packagerConfig": {
+            "icon": "./src/assets/icon.ico"
+        },
+        "makers": [
+            {
+                "name": "@electron-forge/maker-squirrel",
+                "config": {
+                    "name": "furytigris_launcher"
+                }
+            },
+            {
+                "name": "@electron-forge/maker-zip",
+                "platforms": [
+                    "win32",
+                    "win64"
+                ]
+            }
         ]
-      }
-    ]
-  }
+    }
 }
